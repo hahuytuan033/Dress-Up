@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class Loader : MonoBehaviour
 {
     public Animator transition;
-    public float transitionTime= 1f;
+    public float transitionTime = 1f;
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             LoadNextScene();
         }
@@ -19,19 +19,18 @@ public class Loader : MonoBehaviour
 
     public void LoadNextScene()
     {
-       StartCoroutine(LoadScene(SceneManager.GetActiveScene().buildIndex+ 1));
+        StartCoroutine(LoadScene(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
     IEnumerator LoadScene(int sceneIndex)
     {
-        //player animation
-
+        // Play the "Start" animation
         transition.SetTrigger("Start");
 
-        //chờ
+        // Wait for the specified transition time
         yield return new WaitForSeconds(transitionTime);
 
-        //Load Scene
+        // Load the next scene
         SceneManager.LoadScene(sceneIndex);
     }
 }
