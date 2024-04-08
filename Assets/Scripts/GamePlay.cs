@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadingBar : MonoBehaviour
+public class GamePlay : MonoBehaviour
 {
     public Image loadingBar;
     public Button button1;
