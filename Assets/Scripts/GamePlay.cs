@@ -20,9 +20,9 @@ public class GamePlay : MonoBehaviour
     void IncrementLoadingBar()
     {
         buttonClickCount++;
-        if (buttonClickCount <= 5)
+        if (buttonClickCount <= 7)
         {
-            loadingBar.fillAmount = buttonClickCount / 5f;
+            loadingBar.fillAmount = buttonClickCount / 7f;
         }
     }
 }
